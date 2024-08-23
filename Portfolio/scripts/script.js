@@ -11,7 +11,6 @@ window.addEventListener('load', function() {
     }, 2500);
 });
 
-
 function typeWriter(text, i, element) {
     if (i < text.length) {
       element.innerHTML += text.charAt(i);
@@ -22,9 +21,7 @@ function typeWriter(text, i, element) {
     }
   }
 
-
-
-  window.onload=function(){
+window.onload=function(){
     tabContent = document.getElementsByClassName('tabContent');
     tabs = document.getElementsByClassName('tab');
     hideTabsContent(1);
@@ -42,14 +39,16 @@ function showTabsContent(a){
     if(tabContent[a].classList.contains('hide')){
         hideTabsContent(0);
         tabContent[a].classList.add('show')
-        tabs[a].classList.add('whiteborder');
+        tabs[a].classList.add('active');
         tabContent[a].classList.remove('hide');
     }
 }
 
-document.getElementById("tabs").onclick = function(event){
+document.getElementById("tabs_menu").onclick = function(event){
+    console.log('click');
     let target = event.target;
     if(target.className == 'tab'){
+        console.log('tab');
         for(let i = 0; i < tabs.length; i++){
             if(target == tabs[i]){
                 showTabsContent(i);
@@ -58,3 +57,7 @@ document.getElementById("tabs").onclick = function(event){
         }
     }
 }
+
+// document.querySelector('.social_icon1').addEventListener('click', function(){
+//     document.querySelector('.social_icon1').src = "images/discord (1).png";
+// });
