@@ -1,0 +1,175 @@
+/* Базові стилі для мобільних пристроїв */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #000; /* Темний фон для ефекту */
+    color: #00ff00; /* Колір тексту, як на старих екранах */
+    font-family: 'Courier New', Courier, monospace;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#preloader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+.typewriter h1 {
+    font-size: 20px; /* Менший розмір шрифту для мобільних пристроїв */
+    white-space: word-wrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    padding: 0 10px; /* Додатковий відступ для маленьких екранів */
+}
+
+
+#content {
+    padding: 2.5%; /* Менший відступ для мобільних пристроїв */
+    color: #fff;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 2.5%;
+    background-color: #000;
+    height: 100vh;
+    width: 100%;
+}
+
+.sidebar, .content {
+    background-color: #1a1a1a; 
+    border-radius: 15px;
+}
+
+.content{
+    overflow-y: auto;
+}
+
+#tabs{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    position: relative;
+    z-index: 5;
+}
+
+.tabs_menu{
+    position: absolute;
+    display: flex;
+    right: 0;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px ;
+    width: 60%;
+    background-color: #3f3f3f;
+    border-radius: 0px 15px 0px 15px;
+}
+
+.tab{
+    transition: all .3s;
+}
+
+.tab:hover{
+    color: #00ff00;
+}
+
+#tabs .tabContent{
+    width: 100%;
+    min-height: 100px;
+    position: relative;
+    top: -1px;
+    padding: 3%;
+    z-index: 1;
+    border-radius: 0px 0px 3px 3px;
+    transition: all .3s;
+}
+
+#tabs .active{
+    color: #00ff00;
+    border-bottom: 1px solid #00ff00;
+    border-radius: 3px 3px 0px 0px;
+}
+
+#tabs .hide{
+    display: none;
+}
+
+#tabs .show{
+    display: block;
+}
+
+.tabTitle{
+    margin: 0;
+}
+
+.line{
+    margin: 1rem 0;
+    width: 5%;
+    border: 0; /* Видаляє стандартні межі */
+    border-top: 3px solid #00ff00; /* Колір і товщина верхньої межі */
+}
+
+.aboutMe{
+    line-height: 28px;
+    margin: 1.5rem 0;
+}
+
+.aboutMe > span{
+    color: #00ff00;
+    font-weight: bold;
+}
+
+.skills_cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 16px;
+}
+.skills_card {
+    background-color: #1a1a1a; 
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 1); /* Тінь для об'єму */
+    transition: box-shadow 0.3s ease; /* Анімація при наведенні */
+}
+
+.tabSubtitle {
+    margin: 1.5rem 0;
+}
+
+.skills_title {
+    display: flex;
+    align-items: center;
+}
+
+.skills_title::before {
+    margin-right: 10px;
+    width: 64px;
+    height: 64px;
+}
+
+.skills_title[data-content="img1"]::before{
+    content: url(../images/frontend.png);
+}
+.skills_title[data-content="img2"]::before {
+    content: url(../images/backend.png);
+}
+.skills_title[data-content="img3"]::before {
+    content: url(../images/frontend.png);
+}
+.skills_title[data-content="img4"]::before {
+    content: url(../images/frontend.png);
+}
+
+.skills_description {
+}
