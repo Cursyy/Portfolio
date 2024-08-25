@@ -1,91 +1,95 @@
-/* Базові стилі для мобільних пристроїв */
-body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background-color: #000; /* Темний фон для ефекту */
-    color: #00ff00; /* Колір тексту, як на старих екранах */
-    font-family: 'Courier New', Courier, monospace;
+::-webkit-scrollbar {
+  display: none;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #000; /* Темний фон для ефекту */
+  color: #00ff00; /* Колір тексту, як на старих екранах */
+  font-family: "Courier New", Courier, monospace;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-a{
-    color: white;
-    text-decoration: none;
+a {
+  color: white;
+  text-decoration: none;
 }
 
 #preloader {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
 }
 
 .typewriter h1 {
-    font-size: 20px; /* Менший розмір шрифту для мобільних пристроїв */
-    white-space: word-wrap;
-    overflow: hidden;
-    border-right: 3px solid;
-    padding: 0 10px; /* Додатковий відступ для маленьких екранів */
+  font-size: 20px; /* Менший розмір шрифту для мобільних пристроїв */
+  white-space: word-wrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  padding: 0 10px; /* Додатковий відступ для маленьких екранів */
 }
-
 
 #content {
-    padding: 2.5%; /* Менший відступ для мобільних пристроїв */
-    color: #fff;
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-gap: 2.5%;
-    background-color: #000;
-    height: 100vh;
-    width: 100%;
+  padding: 2.5%; /* Менший відступ для мобільних пристроїв */
+  color: #fff;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 2.5%;
+  background-color: #000;
+  height: 100vh;
+  width: 100%;
 }
 
-.sidebar, .content {
-    background-color: #1a1a1a; 
-    border-radius: 15px;
+.sidebar,
+.content {
+  background-color: #1a1a1a;
+  border-radius: 15px;
 }
 
-.content{
-    overflow-y: auto;
+.content {
+  overflow-y: auto;
 }
 
-#tabs{
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-    position: relative;
-    z-index: 3;
+#tabs {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 3;
 }
 
-.tabs_menu{
-    position: absolute;
-    display: flex;
-    right: 0;
-    justify-content: space-around;
-    align-items: center;
-    padding: 15px ;
-    width: 60%;
-    background-color: #3f3f3f;
-    border-radius: 0px 15px 0px 15px;
-    z-index: 4;
+.tabs_menu {
+  position: absolute;
+  display: flex;
+  right: 0;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px;
+  width: 60%;
+  background-color: #3f3f3f;
+  border-radius: 0px 15px 0px 15px;
+  z-index: 4;
+  cursor: pointer;
 }
 
-.tab{
-    position: relative;
-    display: inline-block;
-    transition: all .3s;
+.tab {
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s;
 }
 
 /* .tab:hover{
@@ -93,207 +97,373 @@ a{
 } */
 
 .tab::after {
-    content: '';
-    position: absolute;
-    bottom: -2px; /* Adjust as needed */
-    left: 0;
-    height: 2px;
-    width: 0;
-    background-color: #00ff00; /* Line color */
-    transition: width 0.3s ease;
+  content: "";
+  position: absolute;
+  bottom: -2px; /* Adjust as needed */
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #00ff00; /* Line color */
+  transition: width 0.3s ease;
 }
 
 .tab:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
-#tabs .tabContent{
-    width: 100%;
-    min-height: 100px;
-    position: relative;
-    top: -1px;
-    padding: 3%;
-    z-index: 1;
-    border-radius: 0px 0px 3px 3px;
-    transition: all .3s;
+#tabs .tabContent {
+  width: 100%;
+  min-height: 100px;
+  position: relative;
+  top: -1px;
+  padding: 3%;
+  z-index: 1;
+  border-radius: 0px 0px 3px 3px;
+  transition: all 0.3s;
 }
 
-#tabs .active{
-    color: #00ff00;
-    border-bottom: 2px solid #00ff00;
+#tabs .active {
+  color: #00ff00;
+  border-bottom: 2px solid #00ff00;
 }
 
-#tabs .hide{
-    display: none;
+#tabs .hide {
+  display: none;
 }
 
-#tabs .show{
-    display: block;
+#tabs .show {
+  display: block;
 }
 
-.tabTitle{
-    margin: 0;
+.tabTitle {
+  margin: 0;
 }
 
-.line{
-    margin: 1rem 0;
-    width: 5%;
-    border: 0; /* Видаляє стандартні межі */
-    border-top: 3px solid #00ff00; /* Колір і товщина верхньої межі */
+.line {
+  margin: 1rem 0;
+  width: 5%;
+  border: 0; /* Видаляє стандартні межі */
+  border-top: 3px solid #00ff00; /* Колір і товщина верхньої межі */
 }
 
-.aboutMe{
-    line-height: 28px;
-    margin: 1.5rem 0;
+.aboutMe {
+  line-height: 28px;
+  margin: 1.5rem 0;
 }
 
-.aboutMe > span{
-    color: #00ff00;
-    font-weight: bold;
+.aboutMe > span {
+  color: #00ff00;
+  font-weight: bold;
 }
 
 .skills_cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-    gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  gap: 16px;
 }
 .skills_card {
-    background-color: #1a1a1a; 
-    border-radius: 8px;
-    padding: 16px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 1); /* Тінь для об'єму */
-    transition: box-shadow 0.3s ease; /* Анімація при наведенні */
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 1); /* Тінь для об'єму */
+  transition: box-shadow 0.3s ease; /* Анімація при наведенні */
 }
 
 .tabSubtitle {
-    margin: 1.5rem 0;
+  margin: 1.5rem 0;
+  display: flex;
+  align-items: flex-end;
 }
 
 .skills_title {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .skills_title::before {
-    margin-right: 10px;
-    width: 64px;
-    height: 64px;
+  margin-right: 10px;
+  width: 64px;
+  height: 64px;
 }
 
-.skills_title[data-content="img1"]::before{
-    content: url(../images/frontend.png);
+.skills_title[data-content="img1"]::before {
+  content: url(../images/frontend.png);
 }
 .skills_title[data-content="img2"]::before {
-    content: url(../images/backend.png);
+  content: url(../images/backend.png);
 }
 .skills_title[data-content="img3"]::before {
-    content: url(../images/frontend.png);
+  content: url(../images/frontend.png);
 }
 .skills_title[data-content="img4"]::before {
-    content: url(../images/frontend.png);
+  content: url(../images/frontend.png);
 }
 
 .skills_description {
 }
 
-
-.sidebar{
-    padding: 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.sidebar {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .profile {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .profile_img {
-    width: 80%;
-    align-self: center;
+  width: 80%;
+  align-self: center;
 }
 .profile_name {
-    margin: 1rem 0;
-    text-align: center;
+  margin: 1rem 0;
+  text-align: center;
 }
 .profile_title {
-    margin: 0 auto;
-    padding: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 1);
-    border-radius: 5px;
-    text-align: center;
-    width: 80%;
-
+  margin: 0 auto;
+  padding: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 1);
+  border-radius: 5px;
+  text-align: center;
+  width: 80%;
 }
 
-.sidebar_separator{
-    border: 0;
-    border-top: 3px solid #3f3f3f;
-    width: 100%;
-    margin-top: 1.5rem;
+.profile_title:hover {
+  animation: drawCircle 1s linear forwards;
+}
+
+.sidebar_separator {
+  border: 0;
+  border-top: 3px solid #3f3f3f;
+  width: 100%;
+  margin-top: 1.5rem;
 }
 
 .info_list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 .info_item {
-    display: flex;
-    align-items: center;
-    margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
 }
 
 .info_item > a {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
-.info_item  img{
-    width: 52px;
-    margin-right: 10px;
-    padding: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 1);
-    border-radius: 5px;
+.info_item img {
+  width: 52px;
+  margin-right: 10px;
+  padding: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 1);
+  border-radius: 5px;
 }
-
 
 .social {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 .social_link {
 }
 .social_icon {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    transition: all .3s;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  transition: all 0.3s;
 }
 
-.social_icon:hover{
-    animation: drawCircle .8s linear forwards;
+.social_icon:hover {
+  animation: drawCircle 0.8s linear forwards;
 }
 
 @keyframes drawCircle {
-    0% {
-        box-shadow: 0px -4px 3px #00ff00;
-    }
-    25% {
-        box-shadow: 2px 0px 3px #00ff00;
-    }
-    50% {
-        box-shadow: 0px 4px 3px #00ff00;
-    }
-    75% {
-        box-shadow: -2px 0px 3px #00ff00;
-    }
-    100% {
-        box-shadow: 0px 0px 5px #00ff00;
-    }
+  0% {
+    box-shadow: 0px -4px 3px #00ff00;
+  }
+  25% {
+    box-shadow: 2px 0px 3px #00ff00;
+  }
+  50% {
+    box-shadow: 0px 4px 3px #00ff00;
+  }
+  75% {
+    box-shadow: -2px 0px 3px #00ff00;
+  }
+  100% {
+    box-shadow: 0px 0px 5px #00ff00;
+  }
 }
 
+.project {
+  margin-bottom: 1rem;
+}
 
+.project h3 {
+  margin: 0;
+}
 
+form {
+  display: grid;
+  gap: 1rem;
+}
+
+form label {
+  font-weight: bold;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.tabSubtitle img {
+  width: 32px;
+  margin-right: 10px;
+}
+
+.education-item,
+.work-item {
+  margin-bottom: 20px;
+  position: relative;
+  padding-left: 30px; /* Зменшений відступ */
+}
+
+.education-item::before,
+.work-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px; /* Коригування вертикальної позиції кружечка */
+  width: 10px;
+  height: 10px;
+  background-color: #00ff00; /* Колір кружечка */
+  border-radius: 50%;
+}
+
+.education-item::after,
+.work-item::after {
+  content: "";
+  position: absolute;
+  left: 4px; /* Зменшена відстань між лінією і кружечком */
+  top: 20px; /* Зміна розташування початку лінії */
+  bottom: 0px; /* Коригування для завершення лінії під кружечком */
+  width: 2px;
+  opacity: 0.2;
+  background-color: #00ff00;
+  border-radius: 1px;
+}
+
+.education-item:not(:last-child):after,
+.work-item:not(:last-child):after {
+  bottom: -30px;
+}
+
+.education-title,
+.work-title {
+  margin: 0;
+}
+
+.education-dates,
+.work-dates {
+  display: block;
+  font-style: italic;
+  margin: 5px 0;
+}
+
+.education-description,
+.work-description {
+  margin: 10px 0 0;
+  line-height: 1.6;
+}
+
+.skills {
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 1);
+  padding: 1rem 3rem;
+}
+.skills-item {
+  margin-top: 10px;
+}
+
+.skills-title {
+  margin: 0;
+  font-weight: 300;
+}
+
+.skills-title > span {
+  color: #00ff00;
+  opacity: 0.5;
+  margin-left: 10px;
+}
+.skills-bar {
+  height: 10px;
+  background-color: #3f3f3f;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+.skills-progress {
+  height: 100%;
+  background-color: #00ff00;
+  border-radius: 10px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+}
+
+.form-group {
+  flex: 1;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 300;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #3f3f3f;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+.contact-form button {
+  align-self: flex-end;
+  padding: 10px 20px;
+  background-color: #3f3f3f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.contact-form button:hover {
+  animation: drawCircle 0.8s linear forwards;
+}
+
+.contact-form input:hover,
+.contact-form textarea:hover {
+  animation: drawCircle 0.8s linear forwards;
+}
