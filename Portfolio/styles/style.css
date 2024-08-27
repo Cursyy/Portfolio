@@ -180,26 +180,10 @@ a {
   align-items: center;
 }
 
-.skills_title::before {
+.skills_title img {
   margin-right: 10px;
   width: 64px;
   height: 64px;
-}
-
-.skills_title[data-content="img1"]::before {
-  content: url(../images/frontend.png);
-}
-.skills_title[data-content="img2"]::before {
-  content: url(../images/backend.png);
-}
-.skills_title[data-content="img3"]::before {
-  content: url(../images/frontend.png);
-}
-.skills_title[data-content="img4"]::before {
-  content: url(../images/frontend.png);
-}
-
-.skills_description {
 }
 
 .sidebar {
@@ -271,8 +255,7 @@ a {
   display: flex;
   justify-content: space-between;
 }
-.social_link {
-}
+
 .social_icon {
   width: 56px;
   height: 56px;
@@ -418,7 +401,10 @@ form textarea {
 
 .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Адаптивні колонки з мінімальною шириною 300px */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* Адаптивні колонки з мінімальною шириною 300px */
   gap: 20px;
 }
 
@@ -431,6 +417,9 @@ form textarea {
   border: 1px solid #000;
   position: relative;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .project > img {
@@ -439,6 +428,11 @@ form textarea {
   border-radius: 15px;
   object-fit: cover; /* Забезпечує правильне відображення зображення без деформацій */
   transition: opacity 0.5s ease;
+}
+
+.project > img.soon {
+  width: 128px;
+  height: 128px;
 }
 
 .project:hover img {
@@ -460,8 +454,6 @@ form textarea {
 .project:hover .project-text {
   opacity: 1; /* Текст стає видимим при наведенні */
 }
-
-
 
 .contact-form {
   display: flex;
@@ -513,4 +505,168 @@ form textarea {
 .contact-form input:hover,
 .contact-form textarea:hover {
   animation: drawCircle 0.8s linear forwards;
+}
+
+.burger-menu {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  padding: 0;
+  border: 0;
+  margin: 2rem;
+  z-index: 5;
+  display: none;
+  background-color: transparent;
+}
+
+.burger-menu span {
+  background-color: white;
+  width: 20px;
+  height: 2px;
+  position: absolute;
+  transition: all 0.5s;
+  top: 50%;
+  left: 0;
+}
+
+.burger-menu span:nth-child(1) {
+  transform: translateY(-7px);
+}
+
+.burger-menu span:nth-child(3) {
+  transform: translateY(7px);
+}
+
+.open > .burger-menu span:nth-child(1) {
+  transform: translateY(0) rotate(45deg);
+}
+.open > .burger-menu span:nth-child(2) {
+  transform: rotate(45deg);
+}
+.open > .burger-menu span:nth-child(3) {
+  transform: translateY(0) rotate(-45deg);
+}
+
+span::before,
+span::after {
+  content: "";
+}
+
+.menu {
+  width: 100%;
+  height: 100%;
+  color: white;
+  font-size: 1.5rem;
+  position: fixed;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 0.5s;
+  display: none;
+}
+
+.open .menu {
+  transform: translateX(0);
+}
+
+ul {
+  margin: 5rem 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+@media screen and (max-width: 1180px) {
+  html {
+    font-size: 14px;
+  }
+
+  .info_item img {
+    width: 48px;
+  }
+
+  .social_icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .skills_title img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .skills-bar {
+    height: 8px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 14px;
+  }
+
+  .info_item img {
+    width: 44px;
+  }
+
+  .skills-bar {
+    height: 7px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #content {
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+
+  .sidebar {
+    border-radius: 0px;
+    padding: 0rem;
+  }
+
+  .content {
+    display: none;
+  }
+
+  .social_icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .profile_img {
+    width: 60%;
+  }
+
+  .info_item img {
+    width: 40px;
+  }
+
+  .social {
+    padding: 2rem;
+    padding-top: 0;
+  }
+
+  .profile {
+    padding: 2rem;
+    padding-bottom: 0;
+  }
+
+  .burger-menu {
+    display: block;
+  }
+
+  .menu {
+    display: block;
+  }
 }

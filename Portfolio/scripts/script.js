@@ -45,10 +45,8 @@ function showTabsContent(a) {
 }
 
 document.getElementById("tabs_menu").onclick = function (event) {
-  console.log("click");
   let target = event.target;
   if (target.className == "tab") {
-    console.log("tab");
     for (let i = 0; i < tabs.length; i++) {
       if (target == tabs[i]) {
         showTabsContent(i);
@@ -57,3 +55,10 @@ document.getElementById("tabs_menu").onclick = function (event) {
     }
   }
 };
+
+let btn = document.querySelector(".burger-menu");
+let sidebar = document.querySelector(".sidebar");
+
+btn.addEventListener("click",function(){
+  sidebar.classList.toggle("open");
+})
