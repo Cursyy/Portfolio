@@ -15,21 +15,21 @@
     </div>
 
     <div id="content" style="display: none">
-      <div class="sidebar">
-        <button class="burger-menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <div class="menu">
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Resume</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
+      <button class="burger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="menu">
+        <ul id="menu_list">
+          <li class="nav_item">Home</li>
+          <li class="nav_item">About</li>
+          <li class="nav_item">Resume</li>
+          <li class="nav_item">Portfolio</li>
+          <li class="nav_item">Contact</li>
+        </ul>
+      </div>
+      <div class="sidebar" id="sidebar">
         <div class="profile">
           <img src="./images/me.png" alt="profile" class="profile_img" />
           <h1 class="profile_name">Cursyy</h1>
@@ -66,7 +66,7 @@
           </a>
         </div>
       </div>
-      <div class="content">
+      <div class="content" id="content_box">
         <div id="tabs">
           <div class="tabs_menu" id="tabs_menu">
             <div class="tab active">About</div>

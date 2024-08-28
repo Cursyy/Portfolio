@@ -1,3 +1,11 @@
+let btn = document.querySelector(".burger-menu");
+let content = document.getElementById("content");
+
+btn.addEventListener("click",function(){
+  content.classList.toggle("open");
+})
+
+
 window.addEventListener("load", function () {
   let preloader = document.getElementById("preloader");
   let content = document.getElementById("content");
@@ -21,9 +29,17 @@ function typeWriter(text, i, element) {
   }
 }
 
+
+// Tabs
+
 window.onload = function () {
   tabContent = document.getElementsByClassName("tabContent");
   tabs = document.getElementsByClassName("tab");
+  nav_items = document.getElementsByClassName("nav_item");
+  content_box = document.getElementById("content_box");
+  sidebar = document.getElementById("sidebar");
+  tabs_menu = document.getElementById("tabs_menu");
+
   hideTabsContent(1);
 };
 
@@ -56,9 +72,27 @@ document.getElementById("tabs_menu").onclick = function (event) {
   }
 };
 
-let btn = document.querySelector(".burger-menu");
-let sidebar = document.querySelector(".sidebar");
+document.getElementById("menu_list").onclick = function (event) {
+  let target = event.target;
+  console.log("click");
+  if (target.className == "nav_item") {
+    console.log("click2");
+    for (let i = 0; i < nav_items.length; i++) {
+      if (target == nav_items[i]) {
+        showTabsContent2(i);
+        break;
+      }
+    }
+  }
+}
 
-btn.addEventListener("click",function(){
-  sidebar.classList.toggle("open");
-})
+function showTabsContent2(a){
+  content.classList.toggle("open");
+  sidebar.style.display = "none";
+  content_box.style.display = "grid";
+  if (tabContent[a-1].classList.contains("hide")) {
+    hideTabsContent(0);
+    tabContent[a-1].classList.add("show");
+    tabContent[a-1].classList.remove("hide");
+  }
+}
