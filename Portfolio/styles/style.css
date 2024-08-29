@@ -1,3 +1,5 @@
+/* General */
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -9,8 +11,8 @@ html {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-color: #000; /* Темний фон для ефекту */
-  color: #00ff00; /* Колір тексту, як на старих екранах */
+  background-color: #000;
+  color: #00ff00;
   font-family: "Courier New", Courier, monospace;
 }
 
@@ -22,6 +24,8 @@ a {
   color: white;
   text-decoration: none;
 }
+
+/* Loading page */
 
 #preloader {
   display: flex;
@@ -36,15 +40,17 @@ a {
 }
 
 .typewriter h1 {
-  font-size: 20px; /* Менший розмір шрифту для мобільних пристроїв */
+  font-size: 20px;
   white-space: word-wrap;
   overflow: hidden;
   border-right: 3px solid;
-  padding: 0 10px; /* Додатковий відступ для маленьких екранів */
+  padding: 0 10px;
 }
 
+/* Main page */
+
 #content {
-  padding: 2.5%; /* Менший відступ для мобільних пристроїв */
+  padding: 2.5%;
   color: #fff;
   display: grid;
   grid-template-columns: 1fr 3fr;
@@ -64,127 +70,7 @@ a {
   overflow-y: auto;
 }
 
-#tabs {
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  position: relative;
-  z-index: 3;
-}
-
-.tabs_menu {
-  position: absolute;
-  display: flex;
-  right: 0;
-  justify-content: space-around;
-  align-items: center;
-  padding: 15px;
-  width: 60%;
-  background-color: #3f3f3f;
-  border-radius: 0px 15px 0px 15px;
-  z-index: 4;
-  cursor: pointer;
-}
-
-.tab {
-  position: relative;
-  display: inline-block;
-  transition: all 0.3s;
-}
-
-/* .tab:hover{
-    color: #00ff00;
-} */
-
-.tab::after {
-  content: "";
-  position: absolute;
-  bottom: -2px; /* Adjust as needed */
-  left: 0;
-  height: 2px;
-  width: 0;
-  background-color: #00ff00; /* Line color */
-  transition: width 0.3s ease;
-}
-
-.tab:hover::after {
-  width: 100%;
-}
-
-#tabs .tabContent {
-  width: 100%;
-  min-height: 100px;
-  position: relative;
-  top: -1px;
-  padding: 3%;
-  z-index: 1;
-  border-radius: 0px 0px 3px 3px;
-  transition: all 0.3s;
-}
-
-#tabs .active {
-  color: #00ff00;
-  border-bottom: 2px solid #00ff00;
-}
-
-#tabs .hide {
-  display: none;
-}
-
-#tabs .show {
-  display: block;
-}
-
-.tabTitle {
-  margin: 0;
-}
-
-.line {
-  margin: 1rem 0;
-  width: 5%;
-  border: 0; /* Видаляє стандартні межі */
-  border-top: 3px solid #00ff00; /* Колір і товщина верхньої межі */
-}
-
-.aboutMe {
-  line-height: 28px;
-  margin: 1.5rem 0;
-}
-
-.aboutMe > span {
-  color: #00ff00;
-  font-weight: bold;
-}
-
-.skills_cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-  gap: 16px;
-}
-.skills_card {
-  background-color: #1a1a1a;
-  border-radius: 8px;
-  padding: 16px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 1); /* Тінь для об'єму */
-  transition: box-shadow 0.3s ease; /* Анімація при наведенні */
-}
-
-.tabSubtitle {
-  margin: 1.5rem 0;
-  display: flex;
-  align-items: flex-end;
-}
-
-.skills_title {
-  display: flex;
-  align-items: center;
-}
-
-.skills_title img {
-  margin-right: 10px;
-  width: 64px;
-  height: 64px;
-}
+/* Sidebar */
 
 .sidebar {
   padding: 3rem;
@@ -267,6 +153,133 @@ a {
   animation: drawCircle 0.8s linear forwards;
 }
 
+/* Tabs */
+
+#tabs {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 3;
+}
+
+.tabs_menu {
+  position: absolute;
+  display: flex;
+  right: 0;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px;
+  width: 60%;
+  background-color: #3f3f3f;
+  border-radius: 0px 15px 0px 15px;
+  z-index: 4;
+  cursor: pointer;
+}
+
+.tab {
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s;
+}
+
+.tab::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #00ff00; 
+  transition: width 0.3s ease;
+}
+
+.tab:hover::after {
+  width: 100%;
+}
+
+#tabs .tabContent {
+  width: 100%;
+  min-height: 100px;
+  position: relative;
+  top: -1px;
+  padding: 3%;
+  z-index: 1;
+  border-radius: 0px 0px 3px 3px;
+  transition: all 0.3s;
+}
+
+#tabs .active {
+  color: #00ff00;
+  border-bottom: 2px solid #00ff00;
+}
+
+#tabs .hide {
+  display: none;
+}
+
+#tabs .show {
+  display: block;
+}
+
+.tabTitle {
+  margin: 0;
+}
+
+.tabSubtitle img {
+  width: 32px;
+  margin-right: 10px;
+}
+
+/* Aboout Me */
+
+.line {
+  margin: 1rem 0;
+  width: 5%;
+  border: 0; 
+  border-top: 3px solid #00ff00; 
+}
+
+.aboutMe {
+  line-height: 28px;
+  margin: 1.5rem 0;
+}
+
+.aboutMe > span {
+  color: #00ff00;
+  font-weight: bold;
+}
+
+.skills_cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  gap: 16px;
+}
+.skills_card {
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
+  transition: box-shadow 0.3s ease;
+}
+
+.tabSubtitle {
+  margin: 1.5rem 0;
+  display: flex;
+  align-items: flex-end;
+}
+
+.skills_title {
+  display: flex;
+  align-items: center;
+}
+
+.skills_title img {
+  margin-right: 10px;
+  width: 64px;
+  height: 64px;
+}
+
 @keyframes drawCircle {
   0% {
     box-shadow: 0px -4px 3px #00ff00;
@@ -285,39 +298,13 @@ a {
   }
 }
 
-.project {
-  margin-bottom: 1rem;
-}
-
-.project h3 {
-  margin: 0;
-}
-
-form {
-  display: grid;
-  gap: 1rem;
-}
-
-form label {
-  font-weight: bold;
-}
-
-form input,
-form textarea {
-  width: 100%;
-  padding: 0.5rem;
-}
-
-.tabSubtitle img {
-  width: 32px;
-  margin-right: 10px;
-}
+/* Resume */
 
 .education-item,
 .work-item {
   margin-bottom: 20px;
   position: relative;
-  padding-left: 30px; /* Зменшений відступ */
+  padding-left: 30px;
 }
 
 .education-item::before,
@@ -325,10 +312,10 @@ form textarea {
   content: "";
   position: absolute;
   left: 0;
-  top: 10px; /* Коригування вертикальної позиції кружечка */
+  top: 10px; 
   width: 10px;
   height: 10px;
-  background-color: #00ff00; /* Колір кружечка */
+  background-color: #00ff00;
   border-radius: 50%;
 }
 
@@ -336,9 +323,9 @@ form textarea {
 .work-item::after {
   content: "";
   position: absolute;
-  left: 4px; /* Зменшена відстань між лінією і кружечком */
-  top: 20px; /* Зміна розташування початку лінії */
-  bottom: 0px; /* Коригування для завершення лінії під кружечком */
+  left: 4px; 
+  top: 20px; 
+  bottom: 0px;
   width: 2px;
   opacity: 0.2;
   background-color: #00ff00;
@@ -399,12 +386,22 @@ form textarea {
   border-radius: 10px;
 }
 
+/* Portfolio */
+
+.project {
+  margin-bottom: 1rem;
+}
+
+.project h3 {
+  margin: 0;
+}
+
 .projects {
   display: grid;
   grid-template-columns: repeat(
     auto-fit,
     minmax(300px, 1fr)
-  ); /* Адаптивні колонки з мінімальною шириною 300px */
+  );
   gap: 20px;
 }
 
@@ -426,7 +423,7 @@ form textarea {
   width: 100%;
   height: 100%;
   border-radius: 15px;
-  object-fit: cover; /* Забезпечує правильне відображення зображення без деформацій */
+  object-fit: cover; 
   transition: opacity 0.5s ease;
 }
 
@@ -436,7 +433,7 @@ form textarea {
 }
 
 .project:hover img {
-  opacity: 0.2; /* Затемнення при наведенні */
+  opacity: 0.2; 
 }
 
 .project-text {
@@ -447,12 +444,29 @@ form textarea {
   color: white;
   font-size: 20px;
   opacity: 0;
-  transition: opacity 0.5s ease; /* Плавна поява тексту */
-  pointer-events: none; /* Щоб текст не заважав кліку на посилання */
+  transition: opacity 0.5s ease;
+  pointer-events: none; 
 }
 
 .project:hover .project-text {
-  opacity: 1; /* Текст стає видимим при наведенні */
+  opacity: 1;
+}
+
+/* Contact */
+
+form {
+  display: grid;
+  gap: 1rem;
+}
+
+form label {
+  font-weight: bold;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.5rem;
 }
 
 .contact-form {
@@ -506,6 +520,8 @@ form textarea {
 .contact-form textarea:hover {
   animation: drawCircle 0.8s linear forwards;
 }
+
+/* Burger menu */
 
 .burger-menu {
   width: 20px;
@@ -587,6 +603,8 @@ a {
   color: white;
 }
 
+/* Media queries */
+
 @media screen and (max-width: 1180px) {
   html {
     font-size: 14px;
@@ -625,15 +643,24 @@ a {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 880px) {
+  html {
+    font-size: 18px;
+  }
+
   #content {
     grid-template-columns: 1fr;
     padding: 0;
   }
 
+  #tabs .tabContent {
+    padding: 5%;
+  }
+
   .sidebar {
     border-radius: 0px;
     padding: 0rem;
+    width: 100%;
   }
 
   .content {
@@ -642,16 +669,17 @@ a {
   }
 
   .social_icon {
-    width: 40px;
-    height: 40px;
+    width: 64px;
+    height: 64px;
   }
 
   .profile_img {
-    width: 60%;
+    width: 55%;
   }
 
   .info_item img {
-    width: 40px;
+    width: 56px;
+    margin-right: 20px;
   }
 
   .social {
@@ -671,17 +699,65 @@ a {
   .menu {
     display: block;
   }
-  
 
-  .tabs_menu{
+  .tabs_menu {
     display: none;
   }
 
-  .tabTitle{
+  .tabTitle {
     text-align: end;
   }
-  .tabContent{
+
+  .tabContent {
     width: 100%;
     border-radius: 0px;
+  }
+
+  .line {
+    display: none;
+  }
+
+  .projects {
+    margin-top: 3rem;
+  }
+}
+
+@media screen and (max-width: 541px) {
+  html {
+    font-size: 14px;
+  }
+  .skills_cards {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  .info_item img {
+    width: 48px;
+  }
+
+  .social_icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .profile_img {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 12px;
+  }
+  .profile_img {
+    width: 60%;
+  }
+
+  .info_item img {
+    width: 40px;
+  }
+
+  .social_icon {
+    width: 40px;
+    height: 40px;
   }
 }

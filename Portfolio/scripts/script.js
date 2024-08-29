@@ -1,10 +1,13 @@
+// Burger menu
+
 let btn = document.querySelector(".burger-menu");
 let content = document.getElementById("content");
 
-btn.addEventListener("click",function(){
+btn.addEventListener("click", function () {
   content.classList.toggle("open");
-})
+});
 
+// Loading page
 
 window.addEventListener("load", function () {
   let preloader = document.getElementById("preloader");
@@ -16,7 +19,7 @@ window.addEventListener("load", function () {
   setTimeout(function () {
     preloader.style.display = "none";
     content.style.display = "grid";
-  }, 2500);
+  }, 1800);
 });
 
 function typeWriter(text, i, element) {
@@ -29,7 +32,6 @@ function typeWriter(text, i, element) {
   }
 }
 
-
 // Tabs
 
 window.onload = function () {
@@ -39,7 +41,6 @@ window.onload = function () {
   content_box = document.getElementById("content_box");
   sidebar = document.getElementById("sidebar");
   tabs_menu = document.getElementById("tabs_menu");
-
   hideTabsContent(1);
 };
 
@@ -74,9 +75,7 @@ document.getElementById("tabs_menu").onclick = function (event) {
 
 document.getElementById("menu_list").onclick = function (event) {
   let target = event.target;
-  console.log("click");
   if (target.className == "nav_item") {
-    console.log("click2");
     for (let i = 0; i < nav_items.length; i++) {
       if (target == nav_items[i]) {
         showTabsContent2(i);
@@ -84,15 +83,20 @@ document.getElementById("menu_list").onclick = function (event) {
       }
     }
   }
-}
+};
 
-function showTabsContent2(a){
+function showTabsContent2(a) {
   content.classList.toggle("open");
-  sidebar.style.display = "none";
-  content_box.style.display = "grid";
-  if (tabContent[a-1].classList.contains("hide")) {
-    hideTabsContent(0);
-    tabContent[a-1].classList.add("show");
-    tabContent[a-1].classList.remove("hide");
+  if (a == 0) {
+    sidebar.style.display = "flex";
+    content_box.style.display = "none";
+  } else {
+    sidebar.style.display = "none";
+    content_box.style.display = "grid";
+    if (tabContent[a - 1].classList.contains("hide")) {
+      hideTabsContent(0);
+      tabContent[a - 1].classList.add("show");
+      tabContent[a - 1].classList.remove("hide");
+    }
   }
 }
